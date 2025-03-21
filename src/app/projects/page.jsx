@@ -15,7 +15,7 @@ const Projects = () => {
 
     imagesRef.current.forEach((img, index) => {
       // Alternance entre gauche (-200) et droite (200)
-      const startX = index % 2 === 0 ? -400 : 400;
+      const startX = index % 2 === 0 ? 400 : -400;
 
       gsap.fromTo(
         img,
@@ -32,8 +32,7 @@ const Projects = () => {
           scrollTrigger: {
             trigger: img,
             start: "top 80%",
-            toggleActions: "play reverse restart reverse",
-            markers: true,
+            toggleActions: "play none none none",
           },
         }
       );
