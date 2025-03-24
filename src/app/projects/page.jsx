@@ -26,7 +26,7 @@ const Projects = () => {
         {
           opacity: 1,
           x: 0,
-          duration: 1.3,
+          duration: 2,
           delay: index * 0.1,
           ease: "power4.out",
           scrollTrigger: {

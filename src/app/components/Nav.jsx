@@ -47,6 +47,7 @@ const Nav = () => {
               });
             }}
             href="/"
+            className="hover-link"
           >
             Sb.
           </a>{" "}
@@ -62,8 +63,9 @@ const Nav = () => {
               });
             }}
             href="/projects"
+            className="hover-link"
           >
-            projects
+            gallery
           </a>{" "}
         </div>
         <div className="link">
@@ -75,6 +77,7 @@ const Nav = () => {
               });
             }}
             href="/info"
+            className="hover-link"
           >
             info
           </a>{" "}

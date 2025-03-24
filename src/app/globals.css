@@ -41,12 +41,38 @@ img {
   gap: 2em;
 }
 
+.hover-link {
+  position: relative;
+  z-index: 1;
+
+  background-image: linear-gradient(
+    to right,
+    #025928 20%,
+    var(--bg) 60%,
+
+    var(--copy) 50%
+  );
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.15s ease-out;
+}
+.hover-link:hover {
+  background-position: left;
+}
+
 a {
   text-decoration: none;
   color: var(--copy);
   font-size: 16px;
   font-weight: 600;
   padding: 0.5em;
+}
+
+.hidden {
+  overflow: hidden;
 }
 
 .home {
@@ -84,7 +110,28 @@ a {
   font-family: "Boldonse", system-ui;
   color: var(--bg);
   z-index: 2;
-  font-size: 2vw;
+  font-size: 5vw;
+  position: relative;
+}
+.home span::after {
+  content: "2020";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #bf7e04;
+  z-index: -1;
+  opacity: 0;
+  scale: 0.99;
+  animation: fadeIn 1s 1.85s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .projects {
@@ -105,11 +152,12 @@ a {
 }
 
 .info {
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  max-height: 100vh;
   min-height: 100svh;
   background: var(--bg);
   display: flex;
+  overflow: hidden;
 }
 
 .col {
@@ -130,7 +178,7 @@ a {
 }
 
 .col p .line {
-  clip-path: polygon(0 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .col p .line span {
