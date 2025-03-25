@@ -1,5 +1,6 @@
 import { ViewTransitions } from "next-view-transitions";
 import { Geist, Geist_Mono } from "next/font/google";
+import Cursor from "./components/cursor";
 import Nav from "./components/Nav";
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     <ViewTransitions>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <Cursor />
           <Nav />
           {children}
         </body>

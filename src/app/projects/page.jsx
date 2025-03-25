@@ -15,12 +15,11 @@ const Projects = () => {
 
     imagesRef.current.forEach((img, index) => {
       // Alternance entre gauche (-200) et droite (200)
-      const startX = index % 2 === 0 ? 400 : -400;
+      const startX = index % 2 === 0 ? -140 : -1450;
 
       gsap.fromTo(
         img,
         {
-          opacity: 0,
           x: startX, // Position initiale alternée
         },
         {
@@ -33,6 +32,7 @@ const Projects = () => {
             trigger: img,
             start: "top 80%",
             toggleActions: "play none none none",
+            markers: false,
           },
         }
       );
@@ -54,7 +54,6 @@ const Projects = () => {
                 ref={(el) => (imagesRef.current[index] = el)}
                 src={src}
                 alt={`forest photo ${index + 1}`}
-                style={{ opacity: 0 }}
               />
             )
           )}
